@@ -31,9 +31,12 @@ public class Sets {
 	       list1.remove("apple");
 	        // Create a Set to track seen elements
 	        Set<String> seen = new HashSet<>();
+	        
 	        Set<String> duplicates = list.stream()
 	            .filter(e -> !seen.add(e)) // `add` returns false if the element was already present
 	            .collect(Collectors.toSet());
+	        duplicates.forEach(System.out::println);
+	        System.out.println("Duplicates: " + duplicates);
 	        for (String element : list) {
 	            // Add the element to 'seen' set
 	            // If 'add' returns false, it means the element was already in the set

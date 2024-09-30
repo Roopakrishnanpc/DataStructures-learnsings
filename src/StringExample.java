@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class StringExample {
 
@@ -9,7 +12,13 @@ public class StringExample {
 		System.out.println(obj1.concat(" Yes"));
 		System.out.println(obj1.substring(1,3));
 		StringBuffer buff=new StringBuffer();
+		List<Integer> obj3 = Arrays.asList(1, 2, 3, 4, 5);// List.of(0, 1, 2, 3, 4); 
+		IntStream.range(0, 5).allMatch(i -> obj3.contains(i));
 		
+        List<String> stringList = Arrays.asList("hello", "world", "java", "streams");// List.of("hello", "world", "java", "streams");
+
+        boolean allNonEmpty = IntStream.range(0, stringList.size())
+            .allMatch(i -> !stringList.get(i).isEmpty());
 		//buff.
 		
 		buff.append("Hello");
